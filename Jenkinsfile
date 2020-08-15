@@ -4,7 +4,7 @@ pipeline {
          stage('Build') {
              steps {
                  sh 'echo "Hello World"'
-				 sh 'echo "Hello tushar"'
+				 sh 'echo "Hello tushar Ag"'
                  sh '''
                      echo "Multiline shell steps works too"
                      ls -lah
@@ -18,7 +18,7 @@ pipeline {
          }
          stage('Security Scan') {
               steps { 
-                 aquaMicroscanner imageName: 'alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+                 aquaMicroscanner imageName: 'alpine:latest', notCompleted: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
               }
          }         
          stage('Upload to AWS') {
